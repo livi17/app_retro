@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20141111214811) do
 
-  create_table "microposts", force: :cascade do |t|
+  create_table "events", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20141111214811) do
     t.string   "picture"
   end
 
-  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
-  add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
+  add_index "events", ["user_id", "created_at"], name: "index_events_on_user_id_and_created_at"
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"

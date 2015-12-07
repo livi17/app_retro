@@ -30,7 +30,7 @@ $ git branch --all
   remotes/origin/sign-up
   remotes/origin/static-pages
   remotes/origin/updating-users
-  remotes/origin/user-microposts
+  remotes/origin/user-events
 ```
 
 To check out one of these chapter-specific branches, just use `git checkout` followed by the name without `remotes/origin/`:
