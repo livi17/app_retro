@@ -20,9 +20,24 @@ end
 
 # Events
 users = User.order(:created_at).take(6)
-50.times do
-  content = Faker::Lorem.sentence(5)
-  users.each { |user| user.events.create!(content: content) }
+50.times do 
+  content = Faker::Lorem.paragraph(4, true, 4)
+  title = Faker::Book.title
+  single_day = 0
+  start_date = "2013-09-23"
+  end_date = "2013-09-23"
+  address = Faker::Address.street_address
+  latitude = Faker::Address.latitude
+  longitude = Faker::Address.longitude
+  users.each { |user| user.events.create!(
+    content: content, 
+    title: title, 
+    address: address,
+    latitude: latitude,
+    longitude: longitude,
+    single_day:  single_day,
+    start_date: start_date, 
+    end_date: end_date) }
 end
 
 # Following relationships

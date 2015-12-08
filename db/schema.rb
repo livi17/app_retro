@@ -14,6 +14,13 @@
 ActiveRecord::Schema.define(version: 20141111214811) do
 
   create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.boolean  "single_day"
     t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at", null: false
