@@ -15,3 +15,15 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+  //////Add place//////
+  $('#ad').on('click', function () {
+    "use strict";
+    $('#pl').removeClass("none");
+  })
+  $('#close').on('click', function () {
+    "use strict";
+    $('#pl').addClass("none");
+  })
+});
