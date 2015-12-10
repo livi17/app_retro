@@ -1,0 +1,51 @@
+ <div class="row">
+  <div class="span12">
+    <p>&nbsp;</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span2"><center><%= image_tag(@event.picture.url, :class=>"main_image")  if @event.picture? %>
+    <div class="divider">&nbsp;</div>
+    <div class="btn-group" role="group" aria-label="...">
+      <a href="<%= @event.id %>/edit" type="button" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+      <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-plus-sign"></i> Collect</button>
+      <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-share"></i> Share</button>
+    </div>
+  </div>
+</center></div>
+
+
+<div class="span7">
+  <h3><%= @event.title %></h3><br>
+  <span class="content"><span style="color:#999999;" class="glyphicon glyphicon-globe" aria-hidden="true"></span> <%= @event.address %></span><br>
+  <span class="content"><span style="color:#999999;" class="glyphicon glyphicon-calendar" aria-hidden="true"></span> 
+  <%= @event.start_date.try(:strftime, '%B %e, %Y') %> 
+
+  <% if @event.start_date != @event.end_date %>  
+  - <%= @event.end_date.try(:strftime, '%B %e, %Y') %>
+  <% end %>
+</span>
+<div class="divider">&nbsp;</div>
+<p><%= raw @event.content %></p>
+<div class="divider">&nbsp;</div>
+<h4>Comments</h4>
+</div>
+
+
+
+<div class="span3"><img src="http://placehold.it/210x210" class="img-polaroid"><br>
+ <small>advertisment</small>
+ <div class="divider">&nbsp;</div>
+ <div class="well">
+  <h4>Relativity Index</h4>
+  <p><small>There are <a href="#">17 events</a> within 10 days before or after the date .</small></p> 
+
+</div>
+
+</div>
+</div>
+
+<script>
+$(".btn a").tooltip();
+</script>

@@ -1,0 +1,98 @@
+<%= form_for(@event, html: { multipart: true }) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :class => 'form-control', placeholder: "Event title..." %>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= f.label :main_image %><br />
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, :class => 'form-control', placeholder: "Event location..." %>
+  </div>
+</div>
+
+<%= f.text_field :latitude %>
+<%= f.text_field :longitude %>
+
+<div class="form-group">
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :single_day %> Is this a multi-day event?
+    </label>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="form-inline">
+    <div id="start_date_div" class="form-group">
+      <%= f.label :start_date %><br />
+      <%= f.date_select :start_date, :start_year => Date.current.year, :end_year => 1900 %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="form-inline">
+    <div id="end_date_div" class="form-group">
+      <%= f.label :end_date %><br />
+      <%= f.date_select :end_date, :start_year => Date.current.year, :end_year => 1900  %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, :class => 'form-control', :rows => '6',  placeholder: "Record new event..." %>
+  </div>
+</div>
+
+<%= f.submit "Post", class: "btn btn-primary", :id=>"event_submit" %>
+
+<% end %>
+<script type="text/javascript">
+$('#event_picture').bind('change', function() {
+  var size_in_megabytes = this.files[0].size/1024/1024;
+  if (size_in_megabytes > 5) {
+    alert('Maximum file size is 5MB. Please choose a smaller file.');
+  }
+});
+
+//image upload with preview
+$("#event_picture").fileinput({
+  previewFileType: "image",
+  browseClass: "btn btn-success",
+  browseLabel: "Pick Image",
+  browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i> ",
+  removeClass: "btn btn-danger",
+  removeLabel: "Delete",
+  removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i> ",
+  uploadClass: "btn btn-info",
+  uploadLabel: "Upload",
+  uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i> ",
+  showCaption: true,
+  showRemove: false,
+  showUpload: false
+});
+
+
+$( "#event_start_date_1i" ).addClass( "form-control input-sm" );
+$( "#event_start_date_2i" ).addClass( "form-control input-sm" );
+$( "#event_start_date_3i" ).addClass( "form-control input-sm" );
+$( "#event_end_date_1i" ).addClass( "form-control input-sm" );
+$( "#event_end_date_2i" ).addClass( "form-control input-sm" );
+$( "#event_end_date_3i" ).addClass( "form-control input-sm" );
+
+$(function() {
+  $("#event_address").geocomplete();
+});
+</script>
