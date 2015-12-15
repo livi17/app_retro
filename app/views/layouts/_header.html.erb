@@ -30,12 +30,13 @@
 </header>
 
 <!-- add event form -->
+<% if logged_in? %>
 <div class="add_place none" id="pl">
   <div class="place_form">
     <i class="fa fa-times close_window" id="close"></i>
     <h3>Add new place<span></span></h3>
 
-    <%= form_for(@event, html: { multipart: true }) do |f| %>
+    <%= form_for(Event.new) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <div class="form-group">
@@ -52,8 +53,10 @@
       <span class="picture">
         <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
       </span>
+      <a href="01.html#" class="green_btn_header" id="add">Add</a>
     <% end %>
 
   </div>
 </div>
+<% end %>
 <!-- end add event form -->

@@ -399,3 +399,49 @@ span.picture {
 }
 
 .none {top: -150%; transition: 0.3s linear;}
+
+/* addform */
+.place_form a {
+    width: 100%;
+    margin: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 20px;
+    margin-top: 18px;
+}
+.green_btn_header {
+    background: #202020;
+    padding: 6px 50px;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 4px;
+    display: block;
+    width: 180px;
+    text-align: center;
+    float: right;
+    margin: 9px;
+    transition: 0.3s;
+}
+
+
+.close_window {
+    display: block;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.place_form label input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid #DDDDDD;
+    margin-top: 10px;
+    background: #F9F9F9;
+    padding: 0px 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
