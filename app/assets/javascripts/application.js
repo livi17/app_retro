@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
@@ -19,6 +20,7 @@
 $(document).ready(function () {
   //////Add place//////
   $('#ad').on('click', function () {
+  	console.log("check"); // $(document).ready is not working after clicking a navigation link
     "use strict";
     $('#pl').removeClass("none");
   })
