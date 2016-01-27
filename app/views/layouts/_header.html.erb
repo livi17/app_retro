@@ -46,19 +46,31 @@
 
       <div class="form-group">
         <div class="field">
-          <%= f.label :title %><br />
+          <label for="event_title">
           <%= f.text_field :title, :class => 'form-control', placeholder: "Event title..." %>
+          </label>
         </div>
       </div>
 
-      <div class="field">
-        <%= f.text_area :content, placeholder: "Compose new event..." %>
+      <div class="form-group">
+        <div class="field">
+          <label for="event_content">
+          <%= f.text_area :content, :class => 'form-control', placeholder: "Compose new event..." %>
+          </label>
+        </div>
       </div>
-      <%= f.submit "Post", class: "btn btn-primary" %>
-      <span class="picture">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-      </span>
-      <a href="01.html#" class="green_btn_header" id="add">Add</a>
+
+      <div class="form-group">
+        <div class="field">
+          <span class="picture">
+            <%= f.file_field :picture, :class => 'form-control',  accept: 'image/jpeg,image/gif,image/png' %>
+          </span>
+        </div>
+      </div>
+
+      <%= f.submit "Post", :class => "green_btn_header", :id => "placeFormSubmit" %>
+      
+      <!-- a href="01.html#" class="green_btn_header" id="add">Add</a -->
     <% end %>
 
   </div>

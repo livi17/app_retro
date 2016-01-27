@@ -197,9 +197,7 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
-input {
-  height: auto !important;
-}
+
 
 #error_explanation {
   color: red;
@@ -367,6 +365,17 @@ span.picture {
     font-size: 16px;
     font-weight: 300;
 }
+.place_form label textarea {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #DDDDDD;
+    margin-top: 10px;
+    background: #F9F9F9;
+    padding: 0px 20px;
+    font-size: 16px;
+    font-weight: 300;
+}
 .place_form label input:focus {
     outline: none;
     border: 1px solid #7CCB18;
@@ -381,13 +390,15 @@ span.picture {
     margin-top: 10px;
     height: 30px;
 }
-.place_form a {
+#placeFormSubmit {
     width: 100%;
     margin: 0px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     padding: 20px;
     margin-top: 18px;
+    position:absolute;
+    bottom:0;
 }
 .place_form a:hover {
     width: 100%;
